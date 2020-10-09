@@ -1,3 +1,11 @@
-h1 {
-  color: blue;
+html,
+body {
+  margin: 0;
+}
+
+.titleHead {
+  text-align: center;
+  padding: 15px;
+  background-color: cadetblue;
+  color: white;
 }
