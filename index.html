@@ -12,5 +12,35 @@
     <header>
         <h1>Salary Calculator</h1>
     </header>
+    <main>
+        <div>
+            <h2>Add Employee</h2>
+            <input type="text" placeholder="First Name"/>
+            <input type="text" placeholder="Last Name"/>
+            <input type="number" placeholder="ID"/>
+            <input type="text" placeholder="Job Title"/>
+            <input type="number" placeholder="Annual Salary"/>
+            <button class="btn js-click-submit">Submit</button>
+        </div>
+        <div>
+            <table class="calcTable">
+                <thead>
+                    <tr>
+                        <td>First Name</td>
+                        <td>Last Name</td>
+                        <td>ID</td>
+                        <td>Job Title</td>
+                        <td>Annual Salary</td>
+                    </tr>
+                </thead>
+                <tbody class="js-cost-list"></tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </main>
 </body>
 </html>
