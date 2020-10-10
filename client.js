@@ -1,5 +1,7 @@
 console.log('HELLO');
 
+const employeeList = [];
+
 $(document).ready(readyNow);
 
 function readyNow() {
@@ -13,5 +15,15 @@ function clickToSubmit() {
     const idNumb = $('.js-field-id').val();
     const jobTitle = $('.js-field-title').val();
     const annualsalary = $('.js-field-salary').val();
-    console.log(firstName, lastName, idNumb, jobTitle, annualsalary);
+    
+    const employee = {
+        firstName,
+        lastName,
+        idNumb,
+        jobTitle,
+        annualsalary,
+    };
+    employeeList.push(employee);
+
+    console.log(employee);
 }
