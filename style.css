@@ -26,3 +26,7 @@ body {
   padding: 6px 10px;
   border: 1px solid black;
 }
+
+.isDeleted > * {
+  background-color: red;
+}

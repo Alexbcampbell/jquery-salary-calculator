@@ -6,6 +6,7 @@ $(document).ready(readyNow);
 
 function readyNow() {
     $('.js-click-submit').on('click', clickToSubmit);
+    $('.js-cost-list').on('event', '.js-btn-delete', deleteEmployee);
     
 }
 
@@ -29,11 +30,18 @@ function clickToSubmit() {
     console.log(employee);
 }
 
+function deleteEmployee() {
+    $(this).parent().parent().addClass('isDeleted');
+}
+
 function render() {
     $('.js-cost-list').empty();
+    let monthTotal = 0;
     for(let i = 0; i < employeeList.length; i++) {
         console.log('Render', employeeList[i]);
         const item = employeeList[i];
+
+        monthTotal += parseInt(item.annualSalary);
 
         $('.js-cost-list').append(
            // '<tr>' + '<td>' + item.firstName + '</td>' + '<td>' + item.lastName + '</td>' + '<td>' + item.idNumb + '</td>' + '<td>' + item.jobTitle + '</td>' + '<td>' + item.annualsalary + '</td>' + '<td><button>Delete</button></td>' + '</tr>');
@@ -43,8 +51,10 @@ function render() {
             <td>${item.idNumb}</td>
             <td>${item.jobTitle}</td>
             <td>${item.annualSalary}</td>
-            <td><button>Delete</button></td>
+            <td><button class="js-btn-delete">Delete</button></td>
         </tr>`
             );
         }
+
+        $('.js-total-monthly').text(monthTotal);
 }
