@@ -34,7 +34,6 @@ function clickToSubmit() {
     $('.js-field-title').val('');
     $('.js-field-salary').val('');
 
-
     console.log(employee);
 }
 
@@ -50,7 +49,6 @@ function render() {
     $('.js-cost-list').empty();
     let monthTotal = 0;
     for(let i = 0; i < employeeList.length; i++) {
-        console.log('Render', employeeList[i]);
         const item = employeeList[i];
 
         monthTotal += parseInt(item.annualSalary / 12);
@@ -67,8 +65,9 @@ function render() {
         </tr>`
             );
         }
-
+        deleteSelectedEmployee();
         $('.js-total-monthly').text(monthTotal);
+        
 }
 
 function deleteSelectedEmployee() {
@@ -76,10 +75,12 @@ function deleteSelectedEmployee() {
     for(let i = 0; i < employeeList.length; i++) {
         const item = employeeList[i];
         if(item.isDeleted === true) {
-            monthTotal  = parseInt(item.annualSalary / 12);
-        }
-        
-        
+            monthTotal  == parseInt(item.annualSalary / 12);
+        }   
     }
     $('.js-total-monthly').text(monthTotal);
+    if(monthTotal > 20000){
+        $('..js-total-monthly').css('background-color', 'red');
+    }else if(monthTotal < 20000)
+    $('.js-total-monthly').css('background-color', 'lightgray');
 }
