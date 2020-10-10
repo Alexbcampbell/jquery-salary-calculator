@@ -6,7 +6,7 @@ $(document).ready(readyNow);
 
 function readyNow() {
     $('.js-click-submit').on('click', clickToSubmit);
-    $('.js-cost-list').on('event', '.js-btn-delete', deleteEmployee);
+    $('.js-cost-list').on('click', '.js-btn-delete', deleteEmployee);
     
 }
 
@@ -31,7 +31,7 @@ function clickToSubmit() {
 }
 
 function deleteEmployee() {
-    $(this).parent().parent().addClass('isDeleted');
+    $(this).parent().parent().empty('isDeleted');
 }
 
 function render() {
