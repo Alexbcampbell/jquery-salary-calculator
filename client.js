@@ -28,6 +28,13 @@ function clickToSubmit() {
     employeeList.push(employee);
     render();
 
+    $('.js-field-firstname').val('');
+    $('.js-field-lastname').val('');
+    $('.js-field-id').val('');
+    $('.js-field-title').val('');
+    $('.js-field-salary').val('');
+
+
     console.log(employee);
 }
 
@@ -46,7 +53,7 @@ function render() {
         console.log('Render', employeeList[i]);
         const item = employeeList[i];
 
-        monthTotal += parseInt(item.annualSalary);
+        monthTotal += parseInt(item.annualSalary / 12);
 
         $('.js-cost-list').append(
            // '<tr>' + '<td>' + item.firstName + '</td>' + '<td>' + item.lastName + '</td>' + '<td>' + item.idNumb + '</td>' + '<td>' + item.jobTitle + '</td>' + '<td>' + item.annualsalary + '</td>' + '<td><button>Delete</button></td>' + '</tr>');
@@ -69,7 +76,7 @@ function deleteSelectedEmployee() {
     for(let i = 0; i < employeeList.length; i++) {
         const item = employeeList[i];
         if(item.isDeleted === true) {
-            monthTotal -= parseInt(item.annualSalary);
+            monthTotal  = parseInt(item.annualSalary / 12);
         }
         
         
