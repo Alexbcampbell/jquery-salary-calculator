@@ -36,6 +36,6 @@ function render() {
         const item = employeeList[i];
 
         $('.js-cost-list').append(
-            '<tr>' + '<td>' + item.firstName + '</td>' + '<td>' + item.lastName + '</td>' + '<td>' + item.idNumb + '</td>' + '<td>' + item.jobTitle + '</td>' + '<td>' + item.annualsalary + '</td>' + '</tr>');
+            '<tr>' + '<td>' + item.firstName + '</td>' + '<td>' + item.lastName + '</td>' + '<td>' + item.idNumb + '</td>' + '<td>' + item.jobTitle + '</td>' + '<td>' + item.annualsalary + '</td>' + '<td><button>Select</button></td>' + '</tr>');
     }
 }
