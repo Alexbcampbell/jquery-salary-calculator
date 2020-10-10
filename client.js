@@ -23,6 +23,7 @@ function clickToSubmit() {
         idNumb,
         jobTitle,
         annualSalary,
+        isDeleted: false,
     };
     employeeList.push(employee);
     render();
@@ -31,7 +32,11 @@ function clickToSubmit() {
 }
 
 function deleteEmployee() {
+    const index = $(this).data('index');
+    employeeList[index].isDeleted = true;
     $(this).parent().parent().empty('isDeleted');
+
+    deleteSelectedEmployee();
 }
 
 function render() {
@@ -51,10 +56,23 @@ function render() {
             <td>${item.idNumb}</td>
             <td>${item.jobTitle}</td>
             <td>${item.annualSalary}</td>
-            <td><button class="js-btn-delete">Delete</button></td>
+            <td><button class="js-btn-delete" data-index="${i}">Delete</button></td>
         </tr>`
             );
         }
 
         $('.js-total-monthly').text(monthTotal);
+}
+
+function deleteSelectedEmployee() {
+    let monthTotal = 0;
+    for(let i = 0; i < employeeList.length; i++) {
+        const item = employeeList[i];
+        if(item.isDeleted === true) {
+            monthTotal -= parseInt(item.annualSalary);
+        }
+        
+        
+    }
+    $('.js-total-monthly').text(monthTotal);
 }
