@@ -24,6 +24,18 @@ function clickToSubmit() {
         annualsalary,
     };
     employeeList.push(employee);
+    render();
 
     console.log(employee);
+}
+
+function render() {
+    $('.js-cost-list').empty();
+    for(let i = 0; i < employeeList.length; i++) {
+        console.log('Render', employeeList[i]);
+        const item = employeeList[i];
+
+        $('.js-cost-list').append(
+            '<tr>' + '<td>' + item.firstName + '</td>' + '<td>' + item.lastName + '</td>' + '<td>' + item.idNumb + '</td>' + '<td>' + item.jobTitle + '</td>' + '<td>' + item.annualsalary + '</td>' + '</tr>');
+    }
 }

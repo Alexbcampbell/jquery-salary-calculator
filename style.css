@@ -17,3 +17,12 @@ body {
 .btn {
   margin: 10px 0;
 }
+
+.calcTable {
+  border-collapse: collapse;
+}
+
+.calcTable td {
+  padding: 6px 10px;
+  border: 1px solid black;
+}
