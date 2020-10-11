@@ -9,7 +9,9 @@ body {
   background-color: cadetblue;
   color: white;
 }
-
+h1 {
+  color: rgb(58, 64, 70);
+}
 .container {
   padding: 20px;
 }
@@ -19,8 +21,8 @@ body {
 }
 
 .calcTable {
+  background-color: lightslategrey;
   border-collapse: collapse;
-  background-color: lightgray;
 }
 
 .calcTable td {

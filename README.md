@@ -1,9 +1,25 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+jQuery Salary Calculator
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+With this project, my goal was to create a calculator that took in the following inputs: first name, last name, ID, job title and annual salary. The budget was set to not exceed \$\$20,000. If it did exceed, a red background was to appear on the total budget line.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+I first constructed my page with HTML. Creating a header, inputs, button and table. I styled the header and table through CSS. I used jQuery in conjunction with javaScript to write functions that eventually displayed and appended information to my application page. When all of the input fields are filled in and the submit button clicked, the information is then displayed on the DOM. The total budget is updated to include the monthly salary of each employee. I created a function that divided their annual salary by twelve months, that information is then pushed to the total budget. Once that budget adds up to \$20,000, I wrote and IF statement that will change the background color of the total to red. There are functional delete buttons that take out the employee of the users choosing. It then deletes their info from the DOM and adjusts the total budget by subtracting their monthly salary.
+
+### Usage
+
+    1. Fill in information to input fields.
+    2. Click submit.
+    3. Info is applied to the page via DOM.
+    4. Once the set budget is reached, a red background will appear.
+    5. If the budget is exceeded, click the DELETE button on whichever employee is needed to remain within budget.
+
+#### Built With
+
+HTML5, CSS, JavaScript, jQuery.
+
+##### Acknowledgement
+
+Thanks to Prime Digital Academy who equipped and helped me to make this application a reality. I would also like to thank Trevor Sansalone, Lara Komosa and Joey Heintz for all coming together to grind out some code on Saturday. We all shared what we had and helped each other solve problems.

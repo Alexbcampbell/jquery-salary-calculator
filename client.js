@@ -50,9 +50,9 @@ function render() {
     let monthTotal = 0;
     for(let i = 0; i < employeeList.length; i++) {
         const item = employeeList[i];
-
-        monthTotal += parseInt(item.annualSalary / 12);
-
+        
+        if(item.isDeleted === true){
+        } else{
         $('.js-cost-list').append(
            // '<tr>' + '<td>' + item.firstName + '</td>' + '<td>' + item.lastName + '</td>' + '<td>' + item.idNumb + '</td>' + '<td>' + item.jobTitle + '</td>' + '<td>' + item.annualsalary + '</td>' + '<td><button>Delete</button></td>' + '</tr>');
         `<tr>
@@ -67,20 +67,34 @@ function render() {
         }
         deleteSelectedEmployee();
         $('.js-total-monthly').text(monthTotal);
-        
+    }
+    totalSalaryCost();
+}
+
+function totalSalaryCost() {
+    let totalSalary = 0;
+    for(let i = 0; i < employeeList.length; i++) {
+        const item = employeeList[i];
+        totalSalary += parseInt(item.annualSalary) / 12;
+    }
+    let monthlySalary = totalSalary.toFixed();
+    $('.js-total-monthly').text(monthlySalary);
+
+    deleteSelectedEmployee();
 }
 
 function deleteSelectedEmployee() {
     let monthTotal = 0;
     for(let i = 0; i < employeeList.length; i++) {
         const item = employeeList[i];
-        if(item.isDeleted === true) {
-            monthTotal  == parseInt(item.annualSalary / 12);
+        if(item.isDeleted === false) {
+            monthTotal  += parseInt(item.annualSalary / 12);
         }   
     }
     $('.js-total-monthly').text(monthTotal);
-    if(monthTotal > 20000){
-        $('..js-total-monthly').css('background-color', 'red');
-    }else if(monthTotal < 20000)
-    $('.js-total-monthly').css('background-color', 'lightgray');
+    if(monthTotal >= 20000){
+        $('.js-total-monthly').css('background-color', 'red');
+    } else if (monthTotal  < 20000)
+    $('.js-total-monthly').css('background-color', 'lightslategrey');
+    
 }
